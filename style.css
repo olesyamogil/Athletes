@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(3, 250px);
+  grid-column-gap: 10px;
+  grid-row-gap: 40px;
+  justify-content: center;
+  justify-items: center;
+}
+.people .person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.people .person .photo {
+  margin-top: 10px;
+  position: relative;
+}
+.people .person .photo img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  transition: 1s;
+}
+.people .person .photo .rank {
+  display: block;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  color: #8b0000;
+  position: absolute;
+  right: 20px;
+  top: calc(50% - 16px);
+}
+.people .person .details {
+  text-align: center;
+  margin-top: 8px;
+}
+.people .person .details .name {
+  font-size: 20px;
+  line-height: 23px;
+  color: #2f4f4f;
+}
+.people .person .details .extra {
+  display: none;
+  font-size: 18px;
+  line-height: 21px;
+  color: #000;
+  margin-top: 9px;
+  margin-bottom: 16px;
+}
+.people .person:hover {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  animation: person-onhover;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  z-index: 2;
+}
+.people .person:hover .extra {
+  display: block;
+  animation-name: extra-onhover;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.people .person:hover img {
+  height: 240px;
+  width: 240px;
+  border-radius: 60px;
+}
+
+@keyframes person-onhover {
+  from {
+    width: 200px;
+    height: 267px;
+  }
+  to {
+    width: 264px;
+    height: 344px;
+  }
+}
+@keyframes name-onhover {
+  to {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+@keyframes extra-onhover {
+  to {
+    font-size: 21.6px;
+    line-height: 25px;
+  }
+}
+@media screen and (max-width: 999px) {
+  .people {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
